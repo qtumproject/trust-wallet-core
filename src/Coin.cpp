@@ -331,7 +331,7 @@ std::string TW::deriveAddress(TWCoinType coin, const PrivateKey& privateKey) {
     switch (coin) {
     case TWCoinTypeBinance:
         return Tendermint::Address(HRP_BINANCE_TEST, privateKey.getPublicKey(PublicKeyType::secp256k1)).string();
-    
+
     case TWCoinTypeCosmos:
         return Tendermint::Address(HRP_COSMOS, privateKey.getPublicKey(PublicKeyType::secp256k1)).string();
 
@@ -379,7 +379,7 @@ std::string TW::deriveAddress(TWCoinType coin, const PrivateKey& privateKey) {
         return Tron::Address(privateKey.getPublicKey(PublicKeyType::secp256k1Extended)).string();
 
     case TWCoinTypeZcash:
-        return Zcash::TAddress(privateKey.getPublicKey(PublicKeyType::secp256k1), TWP2SHPrefixZcashT).string();
+        return Zcash::TAddress(privateKey.getPublicKey(PublicKeyType::secp256k1), TWP2PKHPrefixZcashT).string();
 
     case TWCoinTypeZcoin:
         return Bitcoin::Address(privateKey.getPublicKey(PublicKeyType::secp256k1), TWP2PKHPrefixZcoin).string();
