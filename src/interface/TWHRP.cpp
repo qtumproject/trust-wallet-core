@@ -17,6 +17,7 @@ const char* stringForHRP(enum TWHRP hrp) {
     case TWHRPBinanceTest: return HRP_BINANCE_TEST;
     case TWHRPCosmos: return HRP_COSMOS;
     case TWHRPGroestlcoin: return HRP_GROESTLCOIN;
+    case TWHRPQtum: return HRP_QTUM;
     default: return nullptr;
     }
 }
@@ -36,6 +37,8 @@ enum TWHRP hrpForString(const char *_Nonnull string) {
         return TWHRPCosmos;
     } else if (std::strcmp(string, HRP_GROESTLCOIN) == 0) {
         return TWHRPGroestlcoin;
+    } else if (std::strcmp(string, HRP_QTUM) == 0) {
+        return TWHRPQtum;
     } else {
         return TWHRPUnknown;
     }
